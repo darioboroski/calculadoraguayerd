@@ -1,0 +1,29 @@
+.contenedorGlobal{
+    border: 2px solid black;
+    height: 400px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    margin-left: 10px;
+}
+.div1{
+    height: 50px;
+    width: 350px;
+    border: 2px solid black;
+    margin-left: 10px;
+}
+.ptext{
+    text-align: center;
+    border: 1px solid gray;
+    margin-right: 5px;
+    padding: 4px;
+}
+.ptext:hover{
+    background-color: gray;
+}
+
+
+.resultado {
+    margin-left: 5px;
+}
