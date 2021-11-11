@@ -9,6 +9,7 @@ ingresarn=(n)=>{
 
 
 let m1=0;
+let m2=0;
 let operacionpendiente="";
 let operacion="";
 operar=(operacion)=>{
@@ -84,9 +85,12 @@ switch (operacion) {
             resolver(operacionpendiente);
             operacionpendiente="";
             mtemp="";
-         console.log("entro al = Y MTEMP VALE"+mtemp+"Y M1 VALE"+m1);
-            
+    
+            if(!m1){
+                m1=m2;
+            }
             document.querySelector('.resultado').textContent = m1;
+            m2=m1;
             break;
     }
    
@@ -96,7 +100,7 @@ switch (operacion) {
 resolver=(o)=>{
     m1 = parseInt(m1);
     var mtemp2 = parseInt(mtemp); //este paso de variables se utilizara para no generar errores entre el camvio de tipos de bariables de string a int por eso utilizaremos una segunda variable temporaria.
-   
+   console.log("resolver mtamp2" +mtemp2);
     switch (o) {
         case "x":
             m1=m1*mtemp2;
@@ -118,7 +122,8 @@ resolver=(o)=>{
                         break;
         default:
             m1=mtemp2; //lo que hara el default es si aun no existe ninguna operacion pendiente guardar el mtemp en m1
-            mtemp = "";
+            mtemp ="";
+            
 
             break;
     }
