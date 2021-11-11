@@ -143,7 +143,7 @@ function PulsarTecla(event)
             case 107://funcion suma
             operar(1);
             
-            break;
+            break;           
             case 109://funcion resta
             operar(2);
             
@@ -157,12 +157,24 @@ function PulsarTecla(event)
             case 13://funcion IGUAL= (ENTER)
             operar(0);
             break;
-
-    
-        default:
-            //INGERSO DE NUMEROS POR TECLADO  numeros horizontales
-            if(tecla>47 && tecla<58){ // con esto remplaso al switch largo de abajo para ingresar numeros
-            ingresarn(tecla-48);     
+            
+            case 90://funcion mmas (suma a la memoria lo que muestre en display)
+            mmas();
+            
+            break;
+            case 88://funcion mmenos (resta a la memoria lo que muestre en display)
+            mmenos();
+            
+            break;
+            case 67://funcion mostrar memoria( esto mostrara por display lo almasenado en memoria)
+            mostrarmemoria();
+            
+            break;
+            
+            default:
+                //INGERSO DE NUMEROS POR TECLADO  numeros horizontales
+                if(tecla>47 && tecla<58){ // con esto remplaso al switch largo de abajo para ingresar numeros
+                    ingresarn(tecla-48);     
             }
         //INGERSO DE NUMEROS POR TECLADO  numerico.
            if(tecla>95 && tecla<106){ // con esto remplaso al switch largo de abajo para ingresar numeros
@@ -209,7 +221,25 @@ window.onkeydown=PulsarTecla;
 //     {
     
             
-     
-   
+let memoria=0;
+mmas=()=> {
+let memoriaing=document.querySelector('.resultado').textContent;
+console.log("memoria mmas"+memoriaing);
+
+ memoria+=parseInt(memoriaing);
+console.log("memoria mmas"+memoria);
+}
+mmenos=()=> {
+    let memoriaing=document.querySelector('.resultado').textContent;
+    console.log("memoria mmas"+memoriaing);
+    
+     memoria-=parseInt(memoriaing);
+    console.log("memoria menos"+memoria);
+    }  
+mostrarmemoria=()=>{
+    mtemp=memoria.toString();
+    document.querySelector('.resultado').textContent = mtemp;
+
+}
 
 
